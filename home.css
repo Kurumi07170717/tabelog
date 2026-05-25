@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    font-family: sans-serif;
+
+    background-size: cover;
+    background-position: center;
+
+    animation: bg-change 15s infinite;
+
+    overflow: hidden;
+}
+
+/* 暗くして文字を見やすくする */
+.overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.4);
+
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+
+    font-size: 64px;
+
+    margin-bottom: 50px;
+
+    text-shadow: 2px 2px 10px black;
+}
+
+.button-area {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.menu-button {
+    width: 320px;
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.menu-button:hover {
+    transform: scale(1.05);
+
+    background-color: white;
+}
+
+/* 背景画像切り替え */
+@keyframes bg-change {
+
+    0% {
+        background-image: url("images/food1.jpg");
+    }
+
+    33% {
+        background-image: url("images/food2.jpg");
+    }
+
+    66% {
+        background-image: url("images/food3.jpg");
+    }
+
+    100% {
+        background-image: url("images/food1.jpg");
+    }
+}
