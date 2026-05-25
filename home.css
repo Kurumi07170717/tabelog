@@ -86,15 +86,15 @@ h1 {
 @keyframes bg-change {
 
     0% {
-        background-image: url("images/food1.jpg");
+        background-image: url("images/Imagawa.jpeg");
     }
 
-    33% {
-        background-image: url("images/food2.jpg");
+    10% {
+        background-image: url("images/Kaigaraya.jpg");
     }
 
-    66% {
-        background-image: url("images/food3.jpg");
+    20% {
+        background-image: url("images/Kandaya.jpeg");
     }
 
     100% {
