@@ -100,4 +100,20 @@ h1 {
     30% {
         background-image: url("Images/Mouko.jpeg");
     }
+
+    40% {
+    background-image: url("Images/Pomu.jpeg");
+    }    
+
+    50% {
+    background-image: url("Images/SUKI.jpeg");
+    }
+
+    60% {
+    background-image: url("Images/Tonkotsu.jpeg");
+    }
+
+    70% {
+    background-image: url("Images/Yumean.jpeg");
+    }
 }
