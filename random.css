@@ -1,0 +1,178 @@
+/* 全体のリセットと背景 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+/* アプリ全体のコンテナ */
+.container {
+    background: #ffffff;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+h1 {
+    color: #ff6f00; /* 食べログ風のオレンジ色 */
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* 条件絞り込みカード */
+.filter-card {
+    background: #fff8f2;
+    border: 1px solid #ffe0cc;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.filter-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: #d35400;
+}
+
+.filter-group {
+    margin-bottom: 12px;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* ルーレット表示エリア */
+.roulette-wrapper {
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ルーレット本体（Canvasコンテナ） */
+.roulette-main {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #333;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    /* 回転の動きを設定 */
+    transition: transform 4s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+#roulette-canvas {
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+/* 上部の矢印（針） */
+.roulette-arrow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 35px solid #d35400; /* 濃いオレンジの針 */
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.4));
+    z-index: 10;
+}
+
+/* 結果表示エリア（ルーレットの下） */
+.result-display {
+    margin-top: 20px;
+    background: #fff8f2;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid #ffe0cc;
+    min-width: 200px;
+    min-height: 24px;
+}
+
+/* ルーレットを回すボタン */
+#start-button {
+    background: linear-gradient(135deg, #ff9f43, #ff6f00);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+#start-button:hover {
+    opacity: 0.9;
+}
+
+#start-button:active {
+    transform: scale(0.96);
+}
+
+#start-button:disabled {
+    background: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* リンク */
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #ff6f00;
+}
