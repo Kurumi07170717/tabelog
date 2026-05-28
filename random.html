@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件を絞って本格ルーレット！</title>
+    <link rel="stylesheet" href="random.css">
+</head>
+<body>
+
+    <div id="header-import"></div>
+
+    <div class="container">
+        <h1>🎡 今日何食べる？ルーレット</h1>
+        <p class="subtitle">淵野辺・町田の厳選ショップからランダム決定！</p>
+
+        <div class="filter-card">
+            <h3>🔍 条件を絞り込む</h3>
+            <div class="filter-group">
+                <label for="filter-genre">ジャンル</label>
+                <select id="filter-genre" onchange="updateShopsByFilter()">
+                    <option value="all">ジャンルを選ばない（すべて）</option>
+                    <option value="ラーメン">ラーメン</option>
+                    <option value="和食">和食</option>
+                    <option value="洋食">洋食・ハンバーグ等</option>
+                    <option value="中華">中華</option>
+                    <option value="イタリアン">イタリアン</option>
+                    <option value="焼肉">焼肉</option>
+                    <option value="カレー">カレー</option>
+                    <option value="ハンバーガー">ハンバーガー</option>
+                    <option value="パン">パン・ベーカリー</option>
+                    <option value="海鮮">海鮮</option>
+                    <option value="オムライス">オムライス</option>
+                    <option value="ハンバーグ">ハンバーグ</option>
+                    <option value="デザート">デザート</option>
+                    <option value="抹茶">抹茶</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="filter-area">エリア</label>
+                <select id="filter-area" onchange="updateShopsByFilter()">
+                    <option value="all">エリアを選ばない（すべて）</option>
+                    <option value="淵野辺">淵野辺駅周辺</option>
+                    <option value="町田">町田駅周辺</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="roulette-wrapper">
+            <div class="roulette-arrow"></div>
+            <div class="roulette-main">
+                <canvas id="roulette-canvas" width="300" height="300"></canvas>
+            </div>
+            <div class="result-display" id="roulette-display">
+                <span>ルーレットを回してね</span>
+            </div>
+        </div>
+
+        <div class="btn-area">
+            <button id="start-button" onclick="startSpin()">ルーレットを回す！</button>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">← トップページに戻る</a>
+        </div>
+    </div>
+
+    <script src="random.js"></script>
+    <script>
+        // shop_list.html を自動で読み込んでプログラムと連動させる仕掛け
+        fetch('shop_list.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-import').innerHTML = data;
+                
+                // データとして使うだけなのでリストそのものは隠す
+                const list = document.getElementById('shop-list');
+                if(list) list.style.with = 'none'; // 安全のため非表示処理を強化
+                if(list) list.style.display = 'none';
+
+                // shop_list.html の中にある「飲食店一覧」も隠す
+                const headerTitle = document.querySelector('#header-import h1');
+                if(headerTitle) headerTitle.style.display = 'none';
+
+                // 初期状態のルーレットを描画
+                updateShopsByFilter();
+            });
+    </script>
+</body>
+</html>

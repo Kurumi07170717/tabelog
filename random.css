@@ -1,0 +1,183 @@
+/* 全体のリセットと背景 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 10px; /* スマホの端に少し余白を作る */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+/* アプリ全体のコンテナ（スマホに最適化） */
+.container {
+    background: #ffffff;
+    max-width: 450px; /* スマホで持ちやすい幅に少しスリム化 */
+    width: 100%;
+    padding: 20px; /* 内側の余白をスマホ用に少し狭く */
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    box-sizing: border-box; /* はみ出し防止 */
+}
+
+h1 {
+    color: #ff6f00; /* 食べログ風のオレンジ色 */
+    font-size: 20px; /* スマホ用に少し小さく調整 */
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* 条件絞り込みカード */
+.filter-card {
+    background: #fff8f2;
+    border: 1px solid #ffe0cc;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.filter-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #d35400;
+}
+
+.filter-group {
+    margin-bottom: 12px;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* セレクトボックスをスマホでタップしやすく */
+.filter-group select {
+    width: 100%;
+    padding: 10px 12px; /* タップしやすいように少し高く */
+    font-size: 15px; /* スマホで拡大ズームされない丁度いいサイズ */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    -webkit-appearance: none; /* スマホ固有のバグ防止 */
+    appearance: none;         /* ★VS Codeのアドバイス通り、標準プロパティも追加 */
+}
+
+/* ルーレット表示エリア */
+.roulette-wrapper {
+    margin: 30px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ルーレット本体（スマホの画面幅に合わせて調整） */
+.roulette-main {
+    width: 280px;  
+    height: 280px;
+    border-radius: 50%;
+    border: 8px solid #333;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+    transition: transform 4s cubic-bezier(0.1, 0.9, 0.2, 1);
+}
+
+#roulette-canvas {
+    display: block;
+    width: 280px;
+    height: 280px;
+}
+
+/* 上部の矢印（針） */
+.roulette-arrow {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 28px solid #d35400; /* 針の大きさを微調整 */
+    filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.3));
+    z-index: 10;
+}
+
+/* 結果表示エリア（ルーレットの下） */
+.result-display {
+    margin-top: 20px;
+    background: #fff8f2;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #ffe0cc;
+    min-width: 220px;
+    box-sizing: border-box;
+}
+
+/* ルーレットを回すボタン（スマホで押しやすい親指サイズ） */
+#start-button {
+    background: linear-gradient(135deg, #ff9f43, #ff6f00);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 14px 40px; /* 上下を少し厚くして押しやすく */
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.3);
+    transition: transform 0.1s, opacity 0.2s;
+    width: 100%; /* スマホ画面でドーンと押しやすく横いっぱいに */
+    max-width: 280px;
+}
+
+#start-button:hover {
+    opacity: 0.9;
+}
+
+#start-button:active {
+    transform: scale(0.96);
+}
+
+#start-button:disabled {
+    background: #ccc;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* リンク */
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #ff6f00;
+}
