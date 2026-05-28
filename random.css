@@ -76,7 +76,8 @@ h1 {
     border-radius: 8px;
     background-color: #fff;
     cursor: pointer;
-    -webkit-appearance: none; /* 各スマホ固有のバグ防止 */
+    -webkit-appearance: none; /* スマホ固有のバグ防止 */
+    appearance: none;         /* ★VS Codeのアドバイス通り、標準プロパティも追加 */
 }
 
 /* ルーレット表示エリア */
@@ -90,7 +91,7 @@ h1 {
 
 /* ルーレット本体（スマホの画面幅に合わせて調整） */
 .roulette-main {
-    width: 280px;  /* スマホの画面幅に合わせて300pxから280pxへ微調整 */
+    width: 280px;  
     height: 280px;
     border-radius: 50%;
     border: 8px solid #333;
