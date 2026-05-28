@@ -1,0 +1,162 @@
+/* 全体のリセットと背景 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 10px; /* スマホの画面の端に少しだけ余白を作る */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+}
+
+/* ★アプリのコンテナ：スマホの画面幅（450px以下）に自動で100%フィットします */
+.container {
+    background: #ffffff;
+    max-width: 450px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* 画像が丸角からはみ出すのを防ぐ */
+    box-sizing: border-box; /* ★これを入れることで、内側の余白を含めてスマホ幅にピッタリ収まります */
+}
+
+/* 無限スライダーの枠 */
+.slider-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    background: #eaeaea;
+}
+
+/* 写真が横に並ぶトラック */
+.slider-track {
+    display: flex;
+    width: max-content;
+    animation: scrollAnimation 20s linear infinite;
+}
+
+/* スライダーの中の写真サイズ */
+.slider-track img {
+    width: 240px;
+    height: 180px;
+    object-fit: cover;
+}
+
+@keyframes scrollAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* メインコンテンツエリア */
+.main-content {
+    padding: 20px;
+    text-align: center; /* 店名やバッジを中央揃えに */
+    box-sizing: border-box; /* はみ出し防止 */
+}
+
+/* 店名 */
+h1 {
+    font-size: 22px;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* ジャンルとエリアのバッジ行（真ん中寄せ） */
+.meta-row {
+    display: flex;
+    justify-content: center; 
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.meta-left {
+    display: flex;
+    gap: 5px;
+}
+
+/* バッジの共通スタイル */
+.badge {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+
+.badge-genre {
+    background: #ffe0cc;
+    color: #d35400;
+}
+
+.badge-area {
+    background: #e1f5fe;
+    color: #0288d1;
+}
+
+/* レビューセクション */
+.review-section {
+    text-align: left; /* レビューの文章は読みやすいように左寄せ */
+    background: #fff8f2;
+    border: 1px solid #ffe0cc;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 25px;
+    box-sizing: border-box; /* はみ出し防止 */
+}
+
+.review-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #d35400;
+}
+
+.review-section p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* ボタンエリア */
+.btn-section {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+/* ★評価サイトへ飛ぶボタン：スマホの横幅いっぱいにドーンと押しやすくなります */
+.action-btn {
+    display: block;
+    background: linear-gradient(135deg, #ff9f43, #ff6f00);
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 111, 0, 0.2);
+    transition: opacity 0.2s;
+    box-sizing: border-box; /* はみ出し防止 */
+}
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+/* 前のページに戻るリンク */
+.back-link {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+}

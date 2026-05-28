@@ -1,0 +1,156 @@
+/* 全体のリセットと背景 */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+/* アプリ全体のコンテナ */
+.container {
+    background: #ffffff;
+    max-width: 450px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #ff6f00; /* 食べログ風のオレンジ */
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* 条件絞り込みカード */
+.filter-card {
+    background: #fff8f2;
+    border: 1px solid #ffe0cc;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.filter-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #d35400;
+}
+
+.filter-group {
+    margin-bottom: 12px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* 件数表示 */
+.count-text {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* お店カードの入れ物 */
+.shop-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* お店カード単体のデザイン */
+.shop-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shop-name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+    padding-right: 10px;
+}
+
+/* バッジエリア */
+.shop-badge-area {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap; /* スマホでバッジが増えても折り返す */
+    justify-content: flex-end;
+}
+
+.badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.badge-genre {
+    background: #ffe0cc;
+    color: #d35400;
+}
+
+.badge-area {
+    background: #e1f5fe;
+    color: #0288d1;
+}
+
+/* 戻るリンク */
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #ff6f00;
+}
