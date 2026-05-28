@@ -21,11 +21,19 @@
                 <select id="filter-genre" onchange="updateShopsByFilter()">
                     <option value="all">ジャンルを選ばない（すべて）</option>
                     <option value="ラーメン">ラーメン</option>
-                    <option value="カフェ">カフェ</option>
-                    <option value="定食">定食・ご飯処</option>
+                    <option value="和食">和食</option>
+                    <option value="洋食">洋食・ハンバーグ等</option>
+                    <option value="中華">中華</option>
+                    <option value="イタリアン">イタリアン</option>
                     <option value="焼肉">焼肉</option>
-                    <option value="ファミリーレストラン">ファミレス</option>
-                    <option value="その他">その他・各国料理</option>
+                    <option value="カレー">カレー</option>
+                    <option value="ハンバーガー">ハンバーガー</option>
+                    <option value="パン">パン・ベーカリー</option>
+                    <option value="海鮮">海鮮</option>
+                    <option value="オムライス">オムライス</option>
+                    <option value="ハンバーグ">ハンバーグ</option>
+                    <option value="デザート">デザート</option>
+                    <option value="抹茶">抹茶</option>
                 </select>
             </div>
             
@@ -68,6 +76,7 @@
                 
                 // データとして使うだけなのでリストそのものは隠す
                 const list = document.getElementById('shop-list');
+                if(list) list.style.with = 'none'; // 安全のため非表示処理を強化
                 if(list) list.style.display = 'none';
 
                 // shop_list.html の中にある「飲食店一覧」も隠す
